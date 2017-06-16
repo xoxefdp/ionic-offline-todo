@@ -1,14 +1,30 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Ionic Blank
+      ClouDO
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item-sliding *ngFor="let todo of todos">
+      <ion-item>
+        {{todo.title}}
+      </ion-item>
+      <ion-item-options>
+        <button ion-button icon-only color="secondary" (click)="updateTodo(todo)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button icon-only color="danger" (click)="deleteTodo(todo)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+		<button ion-button icon-only full color="secondary" (click)="createTodo()">
+			<ion-icon name="cloud-upload"></ion-icon>
+		</button>
+
+  </ion-list>
 </ion-content>
