@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  ui:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8100:8100"
+      - "35729:35729"
+      - "53703:53703"
+  db:
+    image: couchdb:3
+    ports:
+      - "5984:5984"
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: password
+    volumes:
+      - "couchdb-data:/opt/couchdb/data"
+
+volumes:
+  couchdb-data:
