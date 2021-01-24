@@ -1,6 +1,5 @@
 {
-  "name": "cloudo",
-  "app_id": "",
-  "type": "ionic-angular",
-  "integrations": {}
+  "name": "ionic-offline-todo",
+  "integrations": {},
+  "type": "ionic-angular"
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 import PouchDB from 'pouchdb';
@@ -16,10 +16,10 @@ export class TodosProvider {
 	db: any;
 	remote: any;
 
-  constructor(public http: Http) {
+  constructor(public http:  HttpClient ) {
     // console.log('Hello TodosProvider Provider');
-		this.db = new PouchDB('cloudo');
-		this.remote = 'http://localhost:5984/cloudo';
+		this.db = new PouchDB('ionic-offline-todo');
+		this.remote = 'db:5984/ionic-offline-todo';
 
 		let options = {
 			live: true,
